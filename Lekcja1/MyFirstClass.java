@@ -5,5 +5,4 @@ public class MyFirstClass {
         System.out.print ("Hello World");
 
     }
-
 }
