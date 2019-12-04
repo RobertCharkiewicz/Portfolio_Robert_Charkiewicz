@@ -113,7 +113,7 @@ public class Lekcja2_zadanie {
         }
         // kod z metoda poprawiony -> "if" zamienione na "switch":
 
-        String IloscDniWmiesiacu = podajIloscDniWmiesiacu(4, 2004);
+        String IloscDniWmiesiacu = podajIloscDniWmiesiacu(2, 2004);
         System.out.println(IloscDniWmiesiacu);
     }
 
