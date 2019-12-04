@@ -5,7 +5,7 @@ public class Lekcja2_zadanie {
 
 //Zadanie 1
         //1
-        double zmienna;
+
         double zmienna1 = 50;
 
         //2
@@ -101,7 +101,6 @@ public class Lekcja2_zadanie {
             case 6:
             case 9:
             case 11:
-
                 System.out.println("W miesiacu " + miesiacNr + " w roku " + rokNr + " ilosc dni wynosi: 30");
                 break;
             case 2:
@@ -111,13 +110,13 @@ public class Lekcja2_zadanie {
                     System.out.println("W miesiacu " + miesiacNr + " w roku " + rokNr + " ilosc dni wynosi: 28");
                 }
         }
-        // kod z metoda poprawiony po komentarzu Bartka -> "if" zamienione na "switch":
+        // kod z metoda poprawiony po konsultacji z Bartkiem:
 
-        String IloscDniWmiesiacu = podajIloscDniWmiesiacu(2, 2004);
+        int IloscDniWmiesiacu = podajIloscDniWmiesiacu(2, 2004);
         System.out.println(IloscDniWmiesiacu);
     }
 
-    public static String podajIloscDniWmiesiacu(int numerMiesiaca, int rok) {
+    public static int podajIloscDniWmiesiacu(int numerMiesiaca, int rok) {
 
         switch (numerMiesiaca) {
             case 1:
@@ -127,31 +126,20 @@ public class Lekcja2_zadanie {
             case 8:
             case 10:
             case 12:
-                return ("ilosc dni dla miesiaca: " + numerMiesiaca + " w roku: " + rok + " wynosi: 31");
-
+                return 31;
             case 4:
             case 6:
             case 9:
             case 11:
-                return ("ilosc dni dla miesiaca: " + numerMiesiaca + " w roku: " + rok + " wynosi: 30");
-
+                return 30;
             case 2:
                 if (rok % 4 == 0 && rok % 100 != 0 || rok % 400 == 0) {
-                    return ("ilosc dni dla miesiaca: " + numerMiesiaca + " w roku: " + rok + " wynosi: 29");
-
+                    return 29;
                 } else {
-                    return ("ilosc dni dla miesiaca: " + numerMiesiaca + " w roku: " + rok + " wynosi: 28");
-
+                    return 28;
                 }
-
+            default:
+                return -1;
         }
-        return null;
     }
 }
-
-
-
-
-
-
-
