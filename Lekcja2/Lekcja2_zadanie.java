@@ -1,5 +1,6 @@
 public class Lekcja2_zadanie {
 
+
     public static void main(String[] args) {
 
 //Zadanie 1
@@ -71,7 +72,7 @@ public class Lekcja2_zadanie {
 
         //4
         int podanyRok;
-        podanyRok = 2000;
+        podanyRok = 1600;
 
         if (podanyRok < 1 || podanyRok > 9999) {
             System.out.println("Podany rok: " + podanyRok + " jest poza zakresem. Podaj rok w zakresie: 1 - 9999");
@@ -84,7 +85,7 @@ public class Lekcja2_zadanie {
         //5 - kod bez metody:
 
         int miesiacNr = 2;
-        int rokNr = 1601;
+        int rokNr = 1600;
 
         switch (miesiacNr) {
             case 1:
@@ -110,27 +111,49 @@ public class Lekcja2_zadanie {
                     System.out.println("W miesiacu " + miesiacNr + " w roku " + rokNr + " ilosc dni wynosi: 28");
                 }
         }
-        //5 - kod z metoda:
+        // kod z metoda poprawiony -> "if" zamienione na "switch":
 
-        String IloscDniWmiesiacu = podajIloscDniWmiesiacu(2, 2000);
+        String IloscDniWmiesiacu = podajIloscDniWmiesiacu(4, 2004);
         System.out.println(IloscDniWmiesiacu);
     }
 
     public static String podajIloscDniWmiesiacu(int numerMiesiaca, int rok) {
 
-        if (numerMiesiaca == 1 || numerMiesiaca == 3 || numerMiesiaca == 5 || numerMiesiaca == 7 ||
-                numerMiesiaca == 8 || numerMiesiaca == 10 || numerMiesiaca == 12) {
-            return "ilosc dni dla miesiaca: " +numerMiesiaca+ " w roku: " +rok+" wynosi: 31";
+        switch (numerMiesiaca) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                return ("ilosc dni dla miesiaca: " + numerMiesiaca + " w roku: " + rok + " wynosi: 31");
+            //break;
 
-        } else if (numerMiesiaca == 2 && rok % 4 != 0 && rok % 100 == 0 || rok % 400 != 0) {
-            return "ilosc dni dla miesiaca: " + numerMiesiaca + " w roku: " +rok+ " wynosi: 28";
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                return ("ilosc dni dla miesiaca: " + numerMiesiaca + " w roku: " + rok + " wynosi: 30");
+            //break;
 
-        } else if (numerMiesiaca == 2 && rok % 4 == 0 && rok % 100 != 0 || rok % 400 == 0) {
-            return "ilosc dni dla miesiaca: " + numerMiesiaca + " w roku: " +rok+ " wynosi: 29";
+            case 2:
+                if (rok % 4 == 0 && rok % 100 != 0 || rok % 400 == 0) {
+                    return ("ilosc dni dla miesiaca: " + numerMiesiaca + " w roku: " + rok + " wynosi: 29");
 
-        } else {
-            return "ilosc dni dla miesiaca: " + numerMiesiaca + " w roku: " +rok+ " wynosi: 30";
+                } else {
+                    return ("ilosc dni dla miesiaca: " + numerMiesiaca + " w roku: " + rok + " wynosi: 28");
+
+                }
+
         }
+        return null;
     }
 }
+
+
+
+
+
+
 
