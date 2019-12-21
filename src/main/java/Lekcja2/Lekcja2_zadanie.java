@@ -1,3 +1,5 @@
+package Lekcja2;
+
 public class Lekcja2_zadanie {
 
 
