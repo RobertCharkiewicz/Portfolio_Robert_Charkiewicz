@@ -15,11 +15,17 @@ class Registration {
     WebDriver driver;
 
     @BeforeEach
+    // PLEASE NOTE ! Before each test run, change email KEYtoSEND in every "create an account" step.
     void beforeEach() {
         System.setProperty("webdriver.chrome.driver", "/Users/osx/Desktop/Selenium/chromedriver");
         driver = new ChromeDriver();
         driver.get("http://automationpractice.com/index.php");
         driver.manage().window().maximize();
+    }
+
+    @AfterEach
+    void afterEach() {
+        driver.quit();
     }
 
     @Test
@@ -31,7 +37,6 @@ class Registration {
         loginButton.click();
         driver.manage().timeouts().implicitlyWait(3L, TimeUnit.SECONDS);
         assertTrue(driver.findElement(By.id("email_create")).isDisplayed());
-        driver.quit();
     }
 
     @Test
@@ -43,13 +48,11 @@ class Registration {
         loginButton.click();
         driver.manage().timeouts().implicitlyWait(3L, TimeUnit.SECONDS);
 
-        // create an account -->> change email KEYtoSEND before each test run !!!:
-        driver.findElement(By.id("email_create")).sendKeys("abc3@pl.com");
+        // create an account -->> change here email KEYtoSEND before each test run !:
+        driver.findElement(By.id("email_create")).sendKeys("abc5@pl.com");
         WebElement submitCreateAnAccountButton = driver.findElement(By.id("SubmitCreate"));
         submitCreateAnAccountButton.click();
-        driver.manage().timeouts().implicitlyWait(3L, TimeUnit.SECONDS);
         assertTrue(driver.findElement(By.id("account-creation_form")).isDisplayed());
-        driver.quit();
     }
 
     @Test
@@ -61,11 +64,10 @@ class Registration {
         loginButton.click();
         driver.manage().timeouts().implicitlyWait(3L, TimeUnit.SECONDS);
 
-        // create an account -->> change email KEYtoSEND before each test run !!!:
-        driver.findElement(By.id("email_create")).sendKeys("xyz3@pl.pl");
+        // create an account -->> change here email KEYtoSEND before each test run !:
+        driver.findElement(By.id("email_create")).sendKeys("xyz5@pl.pl");
         WebElement submitCreateAnAccountButton = driver.findElement(By.id("SubmitCreate"));
         submitCreateAnAccountButton.click();
-        driver.manage().timeouts().implicitlyWait(3L, TimeUnit.SECONDS);
         assertTrue(driver.findElement(By.id("account-creation_form")).isDisplayed());
 
         // fill out all mandatory fields:
@@ -83,14 +85,6 @@ class Registration {
         // register & confirm registration:
         WebElement submitAccountButton = driver.findElement(By.id("submitAccount"));
         submitAccountButton.click();
-        driver.manage().timeouts().implicitlyWait(3L, TimeUnit.SECONDS);
         assertTrue(driver.findElement(By.className("info-account")).isDisplayed());
-
-        driver.quit();
     }
 }
-
-
-
-
-
