@@ -28,6 +28,7 @@ public class Lekcja9_zadanie {
     CreateAnAccountPage createAnAccountPage = new CreateAnAccountPage();
     AccountCreationFormPage accountCreationFormPage = new AccountCreationFormPage();
     MyAccountPage myAccountPage = new MyAccountPage();
+    long timeOutSec = 10L;
 
     @BeforeEach
         // PLEASE NOTE ! Before each test run, change email KEYtoSEND in every "create an account" step.
@@ -49,7 +50,7 @@ public class Lekcja9_zadanie {
         // sign in:
         WebElement loginButton = driver.findElement(darkNaviBar.getSignIn());
         loginButton.click();
-        WebDriverWait wait = new WebDriverWait(driver, 10L);
+        WebDriverWait wait = new WebDriverWait(driver, timeOutSec);
         wait.until(ExpectedConditions.visibilityOfElementLocated(createAnAccountPage.getPasswd()));
     }
 
@@ -60,11 +61,11 @@ public class Lekcja9_zadanie {
         // sign in:
         WebElement loginButton = driver.findElement(darkNaviBar.getSignIn());
         loginButton.click();
-        WebDriverWait wait = new WebDriverWait(driver, 10L);
+        WebDriverWait wait = new WebDriverWait(driver, timeOutSec);
         wait.until(ExpectedConditions.visibilityOfElementLocated(createAnAccountPage.getPasswd()));
 
         // create an account -->> change here email KEYtoSEND before each test run !:
-        driver.findElement(createAnAccountPage.getCreateEmail()).sendKeys("abc8@pl.com");
+        driver.findElement(createAnAccountPage.getCreateEmail()).sendKeys("abc9@pl.com");
         WebElement submitCreateAnAccountButton = driver.findElement(createAnAccountPage.getSubmitCreate());
         submitCreateAnAccountButton.click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(accountCreationFormPage.getAccountCreationForm()));
@@ -78,11 +79,11 @@ public class Lekcja9_zadanie {
         // sign in:
         WebElement loginButton = driver.findElement(darkNaviBar.getSignIn());
         loginButton.click();
-        WebDriverWait wait = new WebDriverWait(driver, 10L);
+        WebDriverWait wait = new WebDriverWait(driver, timeOutSec);
         wait.until(ExpectedConditions.visibilityOfElementLocated(createAnAccountPage.getPasswd()));
 
         // create an account -->> change here email KEYtoSEND before each test run !:
-        driver.findElement(createAnAccountPage.getCreateEmail()).sendKeys("abc8@pl.com");
+        driver.findElement(createAnAccountPage.getCreateEmail()).sendKeys("abc9@pl.com");
         WebElement submitCreateAnAccountButton = driver.findElement(createAnAccountPage.getSubmitCreate());
         submitCreateAnAccountButton.click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(accountCreationFormPage.getAccountCreationForm()));

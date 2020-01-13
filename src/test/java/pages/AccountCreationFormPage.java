@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 public class AccountCreationFormPage {
 
     private By accountCreationForm = By.id("account-creation_form");
-
     private By customerFirstname = By.id("customer_firstname");
     private By customerLastname = By.id("customer_lastname");
     private By passwd = By.id("passwd");
@@ -13,7 +12,6 @@ public class AccountCreationFormPage {
     private By address2 = By.id("address2");
     private By city = By.id("city");
     private By idState = By.id("id_state");
-    //         dropdown.selectByValue("1"); //Alabama
     private By postcode = By.id("postcode");
     private By phoneMobile = By.id("phone_mobile");
     private By submitAccount = By.id("submitAccount");
