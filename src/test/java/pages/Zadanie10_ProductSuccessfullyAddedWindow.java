@@ -14,7 +14,7 @@ public class Zadanie10_ProductSuccessfullyAddedWindow {
     @FindBy(css = ".layer_cart_cart a[title='Proceed to checkout']")
     private WebElement proceedToCheckoutButton;
 
-    @FindBy(xpath = ".layer_cart_product i[class='icon-ok']")
+    @FindBy(css = ".icon-ok")
     private WebElement iconOk;
 
     public Zadanie10_ProductSuccessfullyAddedWindow() {
