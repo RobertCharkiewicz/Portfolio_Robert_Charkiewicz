@@ -1,11 +1,11 @@
-package Lekcja12_zadanie_Selenium;
+package Lekcja12zadanieSelenium;
 
 import lombok.Builder;
 import lombok.Getter;
 
 @Builder
 @Getter
-public class Selenium_NewUser_Lombok {
+public class SeleniumNewUserLombok {
     @Builder.Default
     String email = "email@abc.com";
     @Builder.Default

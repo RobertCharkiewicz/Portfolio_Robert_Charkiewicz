@@ -1,6 +1,6 @@
 package pages;
 
-import Lekcja9_zadanie.DriverProvider;
+import Lekcja9zadanie.DriverProvider;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,10 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static Lekcja9_zadanie.DriverProvider.getWebDriverInstance;
+import static Lekcja9zadanie.DriverProvider.getWebDriverInstance;
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
 
-public class Selenium_ProductQuickView {
+public class SeleniumProductQuickView {
 
     // elements with locators:
     @FindBy(css = ".fancybox-iframe")
@@ -26,14 +26,14 @@ public class Selenium_ProductQuickView {
     @FindBy(partialLinkText = "Proceed to checkout")
     private static WebElement proceedToCheckoutButton;
 
+    private static WebDriverWait wait;
+
     // constructor for this page:
-    public Selenium_ProductQuickView() {
+    public SeleniumProductQuickView() {
         PageFactory.initElements(new AjaxElementLocatorFactory(getWebDriverInstance(), 30), this);
     }
 
     // methods to use on this page:
-    private static WebDriverWait wait;
-
     public static void clickQuantityPlusButton() {
         wait = new WebDriverWait(DriverProvider.getWebDriverInstance(), 20);
         wait.until(visibilityOfElementLocated(By.cssSelector(".fancybox-iframe")));

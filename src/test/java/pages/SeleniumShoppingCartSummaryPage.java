@@ -5,9 +5,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
-import static Lekcja9_zadanie.DriverProvider.getWebDriverInstance;
+import static Lekcja9zadanie.DriverProvider.getWebDriverInstance;
 
-public class Selenium_ShoppingCartSummaryPage {
+public class SeleniumShoppingCartSummaryPage {
 
     // elements with locators:
     @FindBy(xpath = ".//p[@class='product-name']//a[text()='Blouse']")
@@ -20,7 +20,7 @@ public class Selenium_ShoppingCartSummaryPage {
     private static WebElement totalPrice;
 
     // constructor for this page:
-    public Selenium_ShoppingCartSummaryPage() {
+    public SeleniumShoppingCartSummaryPage() {
         PageFactory.initElements(new AjaxElementLocatorFactory(getWebDriverInstance(), 10), this);
     }
 

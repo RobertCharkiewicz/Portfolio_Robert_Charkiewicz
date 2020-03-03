@@ -7,9 +7,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
-import static Lekcja9_zadanie.DriverProvider.getWebDriverInstance;
+import static Lekcja9zadanie.DriverProvider.getWebDriverInstance;
 
-public class Selenium_WomanCategoryProducts {
+public class SeleniumWomanCategoryProducts {
 
     public static final String PRODUCT_NAME = "//ul[@class='product_list grid row']//a[@title='%s']";
 
@@ -18,7 +18,7 @@ public class Selenium_WomanCategoryProducts {
     private static WebElement quickViewButton;
 
     // constructor for this page:
-    public Selenium_WomanCategoryProducts() {
+    public SeleniumWomanCategoryProducts() {
         PageFactory.initElements(new AjaxElementLocatorFactory(getWebDriverInstance(), 30), this);
     }
 

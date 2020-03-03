@@ -1,15 +1,15 @@
 package pages;
 
-import Lekcja12_zadanie_Selenium.Selenium_NewUser_Lombok;
+import Lekcja12zadanieSelenium.SeleniumNewUserLombok;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.Select;
 
-import static Lekcja9_zadanie.DriverProvider.getWebDriverInstance;
+import static Lekcja9zadanie.DriverProvider.getWebDriverInstance;
 
-public class Selenium_AcountCreationFormPage {
+public class SeleniumAcountCreationFormPage {
 
     // elements with locators:
     @FindBy(id = "id_gender2")
@@ -49,7 +49,7 @@ public class Selenium_AcountCreationFormPage {
 
 
     // constructor for this page:
-    public Selenium_AcountCreationFormPage() {
+    public SeleniumAcountCreationFormPage() {
         PageFactory.initElements(new AjaxElementLocatorFactory(getWebDriverInstance(), 10), this);
     }
 
@@ -65,17 +65,17 @@ public class Selenium_AcountCreationFormPage {
         new Select(dropdownState).selectByVisibleText(state);
     }
 
-    public static void fillForm(Selenium_NewUser_Lombok selenium_newUser_lombok) {
-        passwordTextBox.sendKeys(selenium_newUser_lombok.getPasswd());
-        firstNameRegistrationTextBox.sendKeys(selenium_newUser_lombok.getName());
-        lastNameRegistrationTextBox.sendKeys(selenium_newUser_lombok.getLastName());
-        firstNameAddressTextBox.sendKeys(selenium_newUser_lombok.getName());
-        lastNameAddressTextBox.sendKeys(selenium_newUser_lombok.getLastName());
-        addressTextBox.sendKeys(selenium_newUser_lombok.getAddress());
-        cityTextBox.sendKeys(selenium_newUser_lombok.getCity());
-        postCodeTextBox.sendKeys(selenium_newUser_lombok.getPostCode());
-        mobilePhoneTextBox.sendKeys(selenium_newUser_lombok.getMobileNo());
-        aliasAddressTextBox.sendKeys(selenium_newUser_lombok.getAddressAlias());
+    public static void fillForm(SeleniumNewUserLombok seleniumNewUserLombok) {
+        passwordTextBox.sendKeys(seleniumNewUserLombok.getPasswd());
+        firstNameRegistrationTextBox.sendKeys(seleniumNewUserLombok.getName());
+        lastNameRegistrationTextBox.sendKeys(seleniumNewUserLombok.getLastName());
+        firstNameAddressTextBox.sendKeys(seleniumNewUserLombok.getName());
+        lastNameAddressTextBox.sendKeys(seleniumNewUserLombok.getLastName());
+        addressTextBox.sendKeys(seleniumNewUserLombok.getAddress());
+        cityTextBox.sendKeys(seleniumNewUserLombok.getCity());
+        postCodeTextBox.sendKeys(seleniumNewUserLombok.getPostCode());
+        mobilePhoneTextBox.sendKeys(seleniumNewUserLombok.getMobileNo());
+        aliasAddressTextBox.sendKeys(seleniumNewUserLombok.getAddressAlias());
     }
 
     public static void clickRegisterButton() {

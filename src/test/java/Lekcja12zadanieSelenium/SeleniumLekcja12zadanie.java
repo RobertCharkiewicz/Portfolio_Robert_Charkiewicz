@@ -1,4 +1,4 @@
-package Lekcja12_zadanie_Selenium;
+package Lekcja12zadanieSelenium;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,19 +9,19 @@ import pages.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-import static Lekcja9_zadanie.DriverProvider.getWebDriverInstance;
+import static Lekcja9zadanie.DriverProvider.getWebDriverInstance;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
-class Selenium_Lekcja12_zadanie {
+class SeleniumLekcja12zadanie {
 
-    Selenium_HomePage selenium_homePage = new Selenium_HomePage();
-    Selenium_Login_Page selenium_login_page = new Selenium_Login_Page();
-    Selenium_AcountCreationFormPage selenium__acountCreationFormPage = new Selenium_AcountCreationFormPage();
-    Selenium_MyAccountPage selenium_myAccountPage = new Selenium_MyAccountPage();
-    Selenium_WomanCategoryProducts selenium_womanCategoryProducts = new Selenium_WomanCategoryProducts();
-    Selenium_ProductQuickView selenium_productQuickView = new Selenium_ProductQuickView();
-    Selenium_ShoppingCartSummaryPage selenium_shoppingCartSummaryPage = new Selenium_ShoppingCartSummaryPage();
+    SeleniumHomePage seleniumHomePage = new SeleniumHomePage();
+    SeleniumLoginPage seleniumLoginpage = new SeleniumLoginPage();
+    SeleniumAcountCreationFormPage seleniumAcountCreationFormPage = new SeleniumAcountCreationFormPage();
+    SeleniumMyAccountPage seleniumMyAccountPage = new SeleniumMyAccountPage();
+    SeleniumWomanCategoryProducts seleniumWomanCategoryProducts = new SeleniumWomanCategoryProducts();
+    SeleniumProductQuickView seleniumProductQuickView = new SeleniumProductQuickView();
+    SeleniumShoppingCartSummaryPage seleniumShoppingCartSummaryPage = new SeleniumShoppingCartSummaryPage();
 
     @BeforeEach
     void beforeEach() {
@@ -40,43 +40,43 @@ class Selenium_Lekcja12_zadanie {
     void VeifyIfTwoProductsSelectedByNewUserAreCorrectlyAddedToShoppingCart() throws InterruptedException {
 
         // Lombok builder for NewUser :
-        var user = Selenium_NewUser_Lombok.builder().build();
+        var user = SeleniumNewUserLombok.builder().build();
 
         //On "Home" page click "SignIn" button:
-        Selenium_HomePage.clickSignInButton();
+        SeleniumHomePage.clickSignInButton();
 
         //On "Login" page in "CreateAnAccount" section, use DateTimeFormatter in email address:
-        Selenium_Login_Page.fillCreateAnAccountEmail(String.format("%s@aa.com", LocalDateTime.now().
+        SeleniumLoginPage.fillCreateAnAccountEmail(String.format("%s@aa.com", LocalDateTime.now().
                 format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmSS"))));
         // Click "Create An Account" button:
-        Selenium_Login_Page.clickCreateAnAccountlButton();
+        SeleniumLoginPage.clickCreateAnAccountButton();
 
         // On "AccountCreationForm" page fill out all mandatory fields:
-        Selenium_AcountCreationFormPage.fillForm(user);
-        Selenium_AcountCreationFormPage.fillDropdowns("11", "2", "1965", "Alabama");
+        SeleniumAcountCreationFormPage.fillForm(user);
+        SeleniumAcountCreationFormPage.fillDropdowns("11", "2", "1965", "Alabama");
         // Click "Register" button:
-        Selenium_AcountCreationFormPage.clickRegisterButton();
+        SeleniumAcountCreationFormPage.clickRegisterButton();
 
         // On "MyAccount" page click "Woman" header:
-        Selenium_MyAccountPage.clickWomanHeader();
+        SeleniumMyAccountPage.clickWomanHeader();
 
         //On "WomanCategoryProducts" page move to product:
-        Selenium_WomanCategoryProducts.moveToElement("Blouse");
+        SeleniumWomanCategoryProducts.moveToElement("Blouse");
         // Click "QuickView" button:
-        Selenium_WomanCategoryProducts.clickQuickViewButton();
+        SeleniumWomanCategoryProducts.clickQuickViewButton();
 
         //In product "iFrame" add 2nd product by clicking on "QuantityPlus" button:
-        Selenium_ProductQuickView.clickQuantityPlusButton();
+        SeleniumProductQuickView.clickQuantityPlusButton();
         // Click "AddToCart" button:
-        Selenium_ProductQuickView.clickAddToCartButton();
+        SeleniumProductQuickView.clickAddToCartButton();
         // In "ProductSuccessfullyAdded" window displayed, click "ProceedToCheckout" button:
-        Selenium_ProductQuickView.clickProceedToCheckout();
+        SeleniumProductQuickView.clickProceedToCheckout();
 
         // In "ShoppingCartSummary" page verify added product name, quantity and total price value;
         switchToDefContext();
-        assertThat(Selenium_ShoppingCartSummaryPage.getProductName(), is("Blouse"));
-        assertThat(Selenium_ShoppingCartSummaryPage.getProductQuantity(), is("2"));
-        assertThat(Selenium_ShoppingCartSummaryPage.getTotalPrice(), is("$58.24"));
+        assertThat(SeleniumShoppingCartSummaryPage.getProductName(), is("Blouse"));
+        assertThat(SeleniumShoppingCartSummaryPage.getProductQuantity(), is("2"));
+        assertThat(SeleniumShoppingCartSummaryPage.getTotalPrice(), is("$58.24"));
 
     }
 

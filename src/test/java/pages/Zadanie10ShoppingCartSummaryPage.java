@@ -5,9 +5,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
-import static Lekcja9_zadanie.DriverProvider.getWebDriverInstance;
+import static Lekcja9zadanie.DriverProvider.getWebDriverInstance;
 
-public class Zadanie10_ShoppingCartSummaryPage {
+public class Zadanie10ShoppingCartSummaryPage {
 
     @FindBy(css = ".shopping_cart a[title='View my shopping cart']")
     private WebElement viewMyShoppingCart;
@@ -15,7 +15,7 @@ public class Zadanie10_ShoppingCartSummaryPage {
     @FindBy(css = "div.cart_block_list a[title='Blouse'].cart_block_product_name")
     private WebElement addedProduct;
 
-    public Zadanie10_ShoppingCartSummaryPage() {
+    public Zadanie10ShoppingCartSummaryPage() {
         PageFactory.initElements(new AjaxElementLocatorFactory(getWebDriverInstance(), 10), this);
     }
 

@@ -5,16 +5,16 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
-import static Lekcja9_zadanie.DriverProvider.getWebDriverInstance;
+import static Lekcja9zadanie.DriverProvider.getWebDriverInstance;
 
-public class Selenium_HomePage {
+public class SeleniumHomePage {
 
     // elements with locators:
     @FindBy(css = ".login")
     private static WebElement signInButton;
 
     // constructor for this page:
-    public Selenium_HomePage() {
+    public SeleniumHomePage() {
         PageFactory.initElements(new AjaxElementLocatorFactory(getWebDriverInstance(), 10), this);
     }
 
