@@ -15,7 +15,7 @@ public class SeleniumWomanCategoryProducts {
 
     // elements with locators:
     @FindBy(partialLinkText = "Quick view")
-    private static WebElement quickViewButton;
+    private WebElement quickViewButton;
 
     // constructor for this page:
     public SeleniumWomanCategoryProducts() {
