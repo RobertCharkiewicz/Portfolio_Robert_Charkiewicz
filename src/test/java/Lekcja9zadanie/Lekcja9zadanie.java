@@ -1,15 +1,12 @@
-package Lekcja9_zadanie;
+package Lekcja9zadanie;
 
 import components.DarkNaviBar;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -17,11 +14,9 @@ import pages.AccountCreationFormPage;
 import pages.CreateAnAccountPage;
 import pages.MyAccountPage;
 
-import java.util.concurrent.TimeUnit;
-
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class Lekcja9_zadanie {
+public class Lekcja9zadanie {
 
     WebDriver driver;
     DarkNaviBar darkNaviBar = new DarkNaviBar();

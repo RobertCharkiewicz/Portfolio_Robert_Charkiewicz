@@ -1,4 +1,4 @@
-package Lekcja9_zadanie;
+package Lekcja9zadanie;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;

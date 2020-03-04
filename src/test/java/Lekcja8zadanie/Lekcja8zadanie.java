@@ -1,4 +1,4 @@
-package Lekcja8_zadanie;
+package Lekcja8zadanie;
 
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;

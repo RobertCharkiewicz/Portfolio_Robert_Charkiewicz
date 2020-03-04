@@ -6,9 +6,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
-import static Lekcja9_zadanie.DriverProvider.getWebDriverInstance;
+import static Lekcja9zadanie.DriverProvider.getWebDriverInstance;
 
-public class Zadanie10_HomePage {
+public class Zadanie10HomePage {
 
     // elements with locators:
     @FindBy(className = "homefeatured")
@@ -26,7 +26,7 @@ public class Zadanie10_HomePage {
     private WebElement addedProduct;
 
     // constructor for this page:
-    public Zadanie10_HomePage() {
+    public Zadanie10HomePage() {
         PageFactory.initElements(new AjaxElementLocatorFactory(getWebDriverInstance(), 10), this);
     }
 

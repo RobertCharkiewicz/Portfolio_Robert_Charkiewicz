@@ -5,9 +5,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
-import static Lekcja9_zadanie.DriverProvider.getWebDriverInstance;
+import static Lekcja9zadanie.DriverProvider.getWebDriverInstance;
 
-public class Zadanie10_ProductPage {
+public class Zadanie10ProductPage {
 
     @FindBy(xpath = "//p[@id='product_reference']")
     private WebElement productReference;
@@ -15,7 +15,7 @@ public class Zadanie10_ProductPage {
     @FindBy(xpath = "//p[@id='add_to_cart'][@class='buttons_bottom_block no-print']")
     private WebElement addToCartButton;
 
-    public Zadanie10_ProductPage() {
+    public Zadanie10ProductPage() {
         PageFactory.initElements(new AjaxElementLocatorFactory(getWebDriverInstance(),
                 10), this);
     }
