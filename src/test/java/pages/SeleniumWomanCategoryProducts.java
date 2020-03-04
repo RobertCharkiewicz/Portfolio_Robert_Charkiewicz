@@ -23,7 +23,7 @@ public class SeleniumWomanCategoryProducts {
     }
 
     // methods to use on this page:
-    public static void moveToElement(String elementName) {
+    public void moveToElement(String elementName) {
         String locator = String.format(PRODUCT_NAME, elementName);
         WebElement product = getWebDriverInstance().findElement(By.xpath(locator));
         new Actions(getWebDriverInstance())
@@ -31,7 +31,7 @@ public class SeleniumWomanCategoryProducts {
                 .perform();
     }
 
-    public static void clickQuickViewButton() {
+    public void clickQuickViewButton() {
         quickViewButton.click();
     }
 }

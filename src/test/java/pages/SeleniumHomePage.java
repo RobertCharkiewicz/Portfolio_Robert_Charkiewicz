@@ -11,7 +11,7 @@ public class SeleniumHomePage {
 
     // elements with locators:
     @FindBy(css = ".login")
-    private static WebElement signInButton;
+    private WebElement signInButton;
 
     // constructor for this page:
     public SeleniumHomePage() {
@@ -19,7 +19,7 @@ public class SeleniumHomePage {
     }
 
     // methods to use on this page:
-    public static void clickSignInButton() {
+    public void clickSignInButton() {
         signInButton.click();
     }
 

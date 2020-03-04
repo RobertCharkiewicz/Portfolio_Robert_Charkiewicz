@@ -15,18 +15,18 @@ public class SeleniumProductQuickView {
 
     // elements with locators:
     @FindBy(css = ".fancybox-iframe")
-    private static WebElement iFrame;
+    private WebElement iFrame;
 
     @FindBy(css = ".icon-plus")
-    private static WebElement quantityPlusButton;
+    private WebElement quantityPlusButton;
 
     @FindBy(id = "add_to_cart")
-    private static WebElement addToCartButton;
+    private WebElement addToCartButton;
 
     @FindBy(partialLinkText = "Proceed to checkout")
-    private static WebElement proceedToCheckoutButton;
+    private WebElement proceedToCheckoutButton;
 
-    private static WebDriverWait wait;
+    private WebDriverWait wait;
 
     // constructor for this page:
     public SeleniumProductQuickView() {
@@ -34,7 +34,7 @@ public class SeleniumProductQuickView {
     }
 
     // methods to use on this page:
-    public static void clickQuantityPlusButton() {
+    public void clickQuantityPlusButton() {
         wait = new WebDriverWait(DriverProvider.getWebDriverInstance(), 20);
         wait.until(visibilityOfElementLocated(By.cssSelector(".fancybox-iframe")));
         getWebDriverInstance().switchTo().frame(iFrame);
@@ -42,11 +42,11 @@ public class SeleniumProductQuickView {
         quantityPlusButton.click();
     }
 
-    public static void clickAddToCartButton() {
+    public void clickAddToCartButton() {
         addToCartButton.click();
     }
 
-    public static void clickProceedToCheckout() {
+    public void clickProceedToCheckout() {
         proceedToCheckoutButton.click();
     }
 }

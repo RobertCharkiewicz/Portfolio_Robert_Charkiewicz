@@ -43,40 +43,40 @@ class SeleniumLekcja12zadanie {
         var user = SeleniumNewUserLombok.builder().build();
 
         //On "Home" page click "SignIn" button:
-        SeleniumHomePage.clickSignInButton();
+        seleniumHomePage.clickSignInButton();
 
         //On "Login" page in "CreateAnAccount" section, use DateTimeFormatter in email address:
-        SeleniumLoginPage.fillCreateAnAccountEmail(String.format("%s@aa.com", LocalDateTime.now().
+        seleniumLoginpage.fillCreateAnAccountEmail(String.format("%s@aa.com", LocalDateTime.now().
                 format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmSS"))));
         // Click "Create An Account" button:
-        SeleniumLoginPage.clickCreateAnAccountButton();
+        seleniumLoginpage.clickCreateAnAccountButton();
 
         // On "AccountCreationForm" page fill out all mandatory fields:
-        SeleniumAcountCreationFormPage.fillForm(user);
-        SeleniumAcountCreationFormPage.fillDropdowns("11", "2", "1965", "Alabama");
+        seleniumAcountCreationFormPage.fillForm(user);
+        seleniumAcountCreationFormPage.fillDropdowns("11", "2", "1965", "Alabama");
         // Click "Register" button:
-        SeleniumAcountCreationFormPage.clickRegisterButton();
+        seleniumAcountCreationFormPage.clickRegisterButton();
 
         // On "MyAccount" page click "Woman" header:
-        SeleniumMyAccountPage.clickWomanHeader();
+        seleniumMyAccountPage.clickWomanHeader();
 
         //On "WomanCategoryProducts" page move to product:
-        SeleniumWomanCategoryProducts.moveToElement("Blouse");
+        seleniumWomanCategoryProducts.moveToElement("Blouse");
         // Click "QuickView" button:
-        SeleniumWomanCategoryProducts.clickQuickViewButton();
+        seleniumWomanCategoryProducts.clickQuickViewButton();
 
         //In product "iFrame" add 2nd product by clicking on "QuantityPlus" button:
-        SeleniumProductQuickView.clickQuantityPlusButton();
+        seleniumProductQuickView.clickQuantityPlusButton();
         // Click "AddToCart" button:
-        SeleniumProductQuickView.clickAddToCartButton();
+        seleniumProductQuickView.clickAddToCartButton();
         // In "ProductSuccessfullyAdded" window displayed, click "ProceedToCheckout" button:
-        SeleniumProductQuickView.clickProceedToCheckout();
+        seleniumProductQuickView.clickProceedToCheckout();
 
         // In "ShoppingCartSummary" page verify added product name, quantity and total price value;
         switchToDefContext();
-        assertThat(SeleniumShoppingCartSummaryPage.getProductName(), is("Blouse"));
-        assertThat(SeleniumShoppingCartSummaryPage.getProductQuantity(), is("2"));
-        assertThat(SeleniumShoppingCartSummaryPage.getTotalPrice(), is("$58.24"));
+        assertThat(seleniumShoppingCartSummaryPage.getProductName(), is("Blouse"));
+        assertThat(seleniumShoppingCartSummaryPage.getProductQuantity(), is("2"));
+        assertThat(seleniumShoppingCartSummaryPage.getTotalPrice(), is("$58.24"));
 
     }
 

@@ -11,9 +11,9 @@ public class SeleniumLoginPage {
 
     // CREATE AN ACCOUNT section elements:
     @FindBy(id = "email_create")
-    private static WebElement createAnAccountEmail;
+    private WebElement createAnAccountEmail;
     @FindBy(id = "SubmitCreate")
-    private static WebElement createAnAccountButton;
+    private WebElement createAnAccountButton;
 
     // constructor for this page:
     public SeleniumLoginPage() {
@@ -21,11 +21,11 @@ public class SeleniumLoginPage {
     }
 
     // methods for CREATE AN ACCOUNT section:
-    public static void fillCreateAnAccountEmail(String email) {
+    public void fillCreateAnAccountEmail(String email) {
         createAnAccountEmail.sendKeys(email);
     }
 
-    public static void clickCreateAnAccountButton() {
+    public void clickCreateAnAccountButton() {
         createAnAccountButton.click();
     }
 }

@@ -13,39 +13,39 @@ public class SeleniumAcountCreationFormPage {
 
     // elements with locators:
     @FindBy(id = "id_gender2")
-    private static WebElement femaleCheckbox;
+    private WebElement femaleCheckbox;
     @FindBy(id = "customer_firstname")
-    private static WebElement firstNameRegistrationTextBox;
+    private WebElement firstNameRegistrationTextBox;
     @FindBy(id = "customer_lastname")
-    private static WebElement lastNameRegistrationTextBox;
+    private WebElement lastNameRegistrationTextBox;
     @FindBy(xpath = "//div[@class='account_creation']//input[@id='passwd']")
-    private static WebElement passwordTextBox;
+    private WebElement passwordTextBox;
     @FindBy(id = "days")
-    private static WebElement dropdownDays;
+    private WebElement dropdownDays;
     @FindBy(id = "months")
-    private static WebElement dropdownMonths;
+    private WebElement dropdownMonths;
     @FindBy(id = "years")
-    private static WebElement dropdownYears;
+    private WebElement dropdownYears;
     @FindBy(id = "firstname")
-    private static WebElement firstNameAddressTextBox;
+    private WebElement firstNameAddressTextBox;
     @FindBy(id = "lastname")
-    private static WebElement lastNameAddressTextBox;
+    private WebElement lastNameAddressTextBox;
     @FindBy(id = "address1")
-    private static WebElement addressTextBox;
+    private WebElement addressTextBox;
     @FindBy(id = "city")
-    private static WebElement cityTextBox;
+    private WebElement cityTextBox;
     @FindBy(id = "id_state")
-    private static WebElement dropdownState;
+    private WebElement dropdownState;
     @FindBy(id = "postcode")
-    private static WebElement postCodeTextBox;
+    private WebElement postCodeTextBox;
     @FindBy(id = "id_country")
-    private static WebElement dropdownCountry;
+    private WebElement dropdownCountry;
     @FindBy(id = "phone_mobile")
-    private static WebElement mobilePhoneTextBox;
+    private WebElement mobilePhoneTextBox;
     @FindBy(id = "alias")
-    private static WebElement aliasAddressTextBox;
+    private WebElement aliasAddressTextBox;
     @FindBy(id = "submitAccount")
-    private static WebElement registerButton;
+    private WebElement registerButton;
 
 
     // constructor for this page:
@@ -58,14 +58,14 @@ public class SeleniumAcountCreationFormPage {
         passwordTextBox.sendKeys(password);
     }
 
-    public static void fillDropdowns(String day, String month, String year, String state) {
+    public void fillDropdowns(String day, String month, String year, String state) {
         new Select(dropdownDays).selectByValue(day);
         new Select(dropdownMonths).selectByValue(month);
         new Select(dropdownYears).selectByValue(year);
         new Select(dropdownState).selectByVisibleText(state);
     }
 
-    public static void fillForm(SeleniumNewUserLombok seleniumNewUserLombok) {
+    public void fillForm(SeleniumNewUserLombok seleniumNewUserLombok) {
         passwordTextBox.sendKeys(seleniumNewUserLombok.getPasswd());
         firstNameRegistrationTextBox.sendKeys(seleniumNewUserLombok.getName());
         lastNameRegistrationTextBox.sendKeys(seleniumNewUserLombok.getLastName());
@@ -78,7 +78,7 @@ public class SeleniumAcountCreationFormPage {
         aliasAddressTextBox.sendKeys(seleniumNewUserLombok.getAddressAlias());
     }
 
-    public static void clickRegisterButton() {
+    public void clickRegisterButton() {
         registerButton.click();
     }
 }

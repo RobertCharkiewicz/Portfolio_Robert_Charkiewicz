@@ -11,7 +11,7 @@ public class SeleniumMyAccountPage {
 
     // elements with locators:
     @FindBy(xpath = "//ul[@class='sf-menu clearfix menu-content sf-js-enabled sf-arrows']//a[@title='Women']")
-    private static WebElement womenHeader;
+    private WebElement womenHeader;
 
     // constructor for this page:
     public SeleniumMyAccountPage() {
@@ -19,7 +19,7 @@ public class SeleniumMyAccountPage {
     }
 
     // methods to use on this page:
-    public static void clickWomanHeader() {
+    public void clickWomanHeader() {
         womenHeader.click();
     }
 
