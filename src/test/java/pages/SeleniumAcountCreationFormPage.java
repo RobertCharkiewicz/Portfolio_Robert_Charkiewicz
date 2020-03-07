@@ -81,4 +81,5 @@ public class SeleniumAcountCreationFormPage {
     public void clickRegisterButton() {
         registerButton.click();
     }
+
 }
