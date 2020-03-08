@@ -27,6 +27,6 @@ Feature:  Automation in practice tests - adding two products to shopping cart by
     And User add second product by clicking on QuantityPlus button in PRODUCT IFRAME
     And User clicks AddToCart button in PRODUCT IFRAME
     And User clicks ProceedToCheckout button in PRODUCT SUCCESSFULLY ADDED WINDOW displayed
-    Then Verify added product name, quantity and total price value in SHOPPING CART SUMMARY PAGE
+    Then Check if product name is "Blouse", quantity is "2" and total price value is "$56.00" in SHOPPING CART SUMMARY PAGE
     And Page is closed
 
