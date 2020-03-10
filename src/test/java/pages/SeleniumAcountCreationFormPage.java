@@ -1,6 +1,7 @@
 package pages;
 
 import Lekcja12zadanieSelenium.SeleniumNewUserLombok;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -78,7 +79,50 @@ public class SeleniumAcountCreationFormPage {
         aliasAddressTextBox.sendKeys(seleniumNewUserLombok.getAddressAlias());
     }
 
+
+    public void setFirstName(String firstName) {
+        this.firstNameAddressTextBox.sendKeys(firstName);
+    }
+
+    public void setLastName(String lastName) {
+        this.lastNameAddressTextBox.sendKeys(lastName);
+    }
+
+    public void setPassword(String password) {
+        this.passwordTextBox.sendKeys(password);
+    }
+
+    public void setBDay(String bDay) {
+        new Select(dropdownDays).selectByValue(bDay);
+
+    }
+
+    public void setBMonth(String bMonth) {
+        new Select(dropdownMonths).selectByValue(bMonth);
+
+    }
+
+    public void setBYear(String bYear) {
+        new Select(dropdownYears).selectByValue(bYear);
+    }
+
+    public void setAddress(String address) {
+        this.addressTextBox.sendKeys(address);
+    }
+
     public void clickRegisterButton() {
         registerButton.click();
+    }
+
+    public void setCity(String city) {
+        this.cityTextBox.sendKeys(city);
+    }
+
+    public void setPostCode(String postCode) {
+        this.postCodeTextBox.sendKeys(postCode);
+    }
+
+    public void setMobileNo(String mobileNo) {
+        this.mobilePhoneTextBox.sendKeys(mobileNo);
     }
 }

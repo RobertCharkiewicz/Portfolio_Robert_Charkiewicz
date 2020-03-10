@@ -23,4 +23,8 @@ public class SeleniumHomePage {
         signInButton.click();
     }
 
+    public boolean isSignInButtonDisplayed() {
+        return signInButton.isDisplayed();
+    }
+
 }
