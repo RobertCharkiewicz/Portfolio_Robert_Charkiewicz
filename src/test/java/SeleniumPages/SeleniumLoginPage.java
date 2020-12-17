@@ -1,11 +1,11 @@
-package pages;
+package SeleniumPages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
-import static Lekcja9zadanie.DriverProvider.getWebDriverInstance;
+import static components.DriverProvider.getWebDriverInstance;
 
 public class SeleniumLoginPage {
 

@@ -1,12 +1,12 @@
-import Lekcja9zadanie.DriverProvider;
+import components.DriverProvider;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pages.*;
+import SeleniumPages.*;
 
-import static Lekcja9zadanie.DriverProvider.getWebDriverInstance;
+import static components.DriverProvider.getWebDriverInstance;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
@@ -76,10 +76,15 @@ public class StepsDefinitions {
         seleniumMyAccountPage.clickWomanHeader();
     }
 
-    @And("User clikcs QuickView button on WOMAN CATEGORY PRODUCTS PAGE")
-    public void userClikcsQuickViewButton() {
+    @And("User mouse over to product on WOMAN CATEGORY PRODUCTS PAGE")
+    public void userMouseOverToProductOnWOMANCATEGORYPRODUCTSPAGE() {
         seleniumWomanCategoryProducts.moveToElement("Blouse");
+    }
+
+    @And("User clicks Quick View button on WOMAN CATEGORY PRODUCTS PAGE")
+    public void userClicksQuickViewButtonOnWOMANCATEGORYPRODUCTSPAGE() {
         seleniumWomanCategoryProducts.clickQuickViewButton();
+
     }
 
     @And("User add second product by clicking on QuantityPlus button in PRODUCT IFRAME")

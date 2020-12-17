@@ -1,4 +1,4 @@
-package Lekcja12zadanieSelenium;
+package Selenium;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -20,8 +20,6 @@ public class SeleniumNewUserLombok {
     String address2 = "address2";
     @Builder.Default
     String city = "city";
-    @Builder.Default
-    String state = "Alabama";
     @Builder.Default
     String postCode = "12345";
     @Builder.Default

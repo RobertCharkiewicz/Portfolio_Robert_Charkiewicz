@@ -1,19 +1,19 @@
-package Lekcja12zadanieSelenium;
+package Selenium;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import pages.*;
+import SeleniumPages.*;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-import static Lekcja9zadanie.DriverProvider.getWebDriverInstance;
+import static components.DriverProvider.getWebDriverInstance;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
-class SeleniumLekcja12zadanie {
+class SeleniumTest {
 
     SeleniumHomePage seleniumHomePage = new SeleniumHomePage();
     SeleniumLoginPage seleniumLoginpage = new SeleniumLoginPage();
@@ -36,8 +36,8 @@ class SeleniumLekcja12zadanie {
     }
 
     @Test
-    @DisplayName("Verify if two products selected by NewUser are correctly added to shopping cart")
-    void VeifyIfTwoProductsSelectedByNewUserAreCorrectlyAddedToShoppingCart() throws InterruptedException {
+    @DisplayName("Verify if two products selected by new registered user are correctly added to shopping cart")
+    void VerifyIfTwoProductsSelectedByNewUserAreCorrectlyAddedToShoppingCart() throws InterruptedException {
 
         // Lombok builder for NewUser :
         var user = SeleniumNewUserLombok.builder().build();
@@ -47,7 +47,7 @@ class SeleniumLekcja12zadanie {
 
         //On "Login" page in "CreateAnAccount" section, use DateTimeFormatter in email address:
         seleniumLoginpage.fillCreateAnAccountEmail(String.format("%s@aa.com", LocalDateTime.now().
-                format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmSS"))));
+                format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"))));
         // Click "Create An Account" button:
         seleniumLoginpage.clickCreateAnAccountButton();
 
@@ -60,7 +60,7 @@ class SeleniumLekcja12zadanie {
         // On "MyAccount" page click "Woman" header:
         seleniumMyAccountPage.clickWomanHeader();
 
-        //On "WomanCategoryProducts" page move to product:
+        //On "WomanCategoryProducts" page mouse over to "Blouse" product:
         seleniumWomanCategoryProducts.moveToElement("Blouse");
         // Click "QuickView" button:
         seleniumWomanCategoryProducts.clickQuickViewButton();

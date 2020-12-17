@@ -1,14 +1,13 @@
-package pages;
+package SeleniumPages;
 
-import Lekcja12zadanieSelenium.SeleniumNewUserLombok;
-import org.openqa.selenium.Alert;
+import Selenium.SeleniumNewUserLombok;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.Select;
 
-import static Lekcja9zadanie.DriverProvider.getWebDriverInstance;
+import static components.DriverProvider.getWebDriverInstance;
 
 public class SeleniumAcountCreationFormPage {
 

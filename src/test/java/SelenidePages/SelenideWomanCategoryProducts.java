@@ -14,7 +14,7 @@ public class SelenideWomanCategoryProducts {
     public static final String PRODUCT_NAME = "//ul[@class='product_list grid row']//a[@title='%s']";
 
     // elements with locators:
-    private final static SelenideElement QUICKVIEWBUTTON = $(By.partialLinkText("Quick view"));
+    private final static SelenideElement QUICKVIEWBUTTON = $(By.xpath(".//*[@id=\"center_column\"]/ul/li[2]/div/div[1]/div/a[2]/span"));
 
     // methods to use on this page:
     public void moveToElement(String elementName) {

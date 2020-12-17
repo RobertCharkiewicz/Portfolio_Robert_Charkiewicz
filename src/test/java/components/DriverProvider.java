@@ -1,4 +1,4 @@
-package Lekcja9zadanie;
+package components;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -33,6 +33,7 @@ public class DriverProvider {
     public static WebElement findElement(By locator) {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(presenceOfElementLocated(locator));
+
         // Java Script -> scroll to element:
         WebElement element = driver.findElement(locator);
         ((JavascriptExecutor) getWebDriverInstance()).executeScript("arguments[0].scrollIntoView();", element);

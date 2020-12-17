@@ -1,6 +1,6 @@
-package pages;
+package SeleniumPages;
 
-import Lekcja9zadanie.DriverProvider;
+import components.DriverProvider;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static Lekcja9zadanie.DriverProvider.getWebDriverInstance;
+import static components.DriverProvider.getWebDriverInstance;
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
 
 public class SeleniumProductQuickView {

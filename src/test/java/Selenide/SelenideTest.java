@@ -1,7 +1,7 @@
-package Lekcja12zadanieSelenide;
+package Selenide;
 
 import SelenidePages.*;
-import Lekcja12zadanieSelenium.SeleniumNewUserLombok;
+import Selenium.SeleniumNewUserLombok;
 import com.codeborne.selenide.WebDriverRunner;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,7 +15,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static com.codeborne.selenide.Selenide.open;
 import static org.hamcrest.core.Is.is;
 
-class SelenideLekcja12zadanie {
+class SelenideTest {
 
     SelenideHomePage selenideHomePage = new SelenideHomePage();
     SelenideLoginPage selenideLoginPage = new SelenideLoginPage();
@@ -38,7 +38,7 @@ class SelenideLekcja12zadanie {
     }
 
     @Test
-    @DisplayName("Verify if two products selected by NewUser are correctly added to shopping cart")
+    @DisplayName("Verify if two products selected by new registered user are correctly added to shopping cart")
     void VeifyIfTwoProductsSelectedByNewUserAreCorrectlyAddedToShoppingCart() {
 
         // Lombok builder for NewUser :
